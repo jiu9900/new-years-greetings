@@ -1,0 +1,20 @@
+.goToLogin,.goToRegister{
+    width: 70%;
+    height: 3rem;
+    align-self: center;
+    margin-top: 10%;
+    border-radius: 20px;
+    background-color: #f4c884;
+    color: #a27823;
+    font-size: 30px;
+    text-align: center;
+}
+
+.bg{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(244, 160, 160);
+    height: 100%;
+    width: 100%;
+}

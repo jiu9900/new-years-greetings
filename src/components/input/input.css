@@ -1,0 +1,21 @@
+.warn {
+    margin: 2%;
+    line-height: 2.5rem;
+    width: 70%;
+    border-radius: 10px;
+    background-color: #cccaca;
+    border: solid 2px red;
+}
+
+.warn::placeholder {
+    color: red;
+}
+
+input {
+    margin: 2%;
+    line-height: 2.5rem;
+    width: 70%;
+    border-radius: 10px;
+    border: none;
+    background-color: #cccaca;
+}

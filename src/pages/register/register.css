@@ -1,0 +1,43 @@
+.background{
+    margin: auto;
+    display: flex;
+    flex-direction:column ;
+    background-color: rgb(244, 160, 160);
+    height: 100%;
+    width: 100%;
+}
+
+.register-top{
+    display: flex;
+    margin: 2% 0 10% 0;
+    font-size: 20px;
+}
+
+.register-goback{
+    color: #f4c884;
+    width: 40px;
+    margin: 2% 70% 0 5%;
+}
+
+.register-login{
+    color: #f4c884;
+    width: 40px;
+    margin: 2% 0 0 0;
+}
+
+.welcome{
+    color: #f4c884;
+    font-size: 30px;
+    margin: 10% 25%;
+}
+
+.register{
+    width: 70%;
+    height: 3rem;
+    margin-top: 10%;
+    border-radius: 20px;
+    background-color: #f4c884;
+    color: #a27823;
+    font-size: 30px;
+    line-height: 0px;
+}
