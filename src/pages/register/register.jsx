@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useLocation } from 'wouter';
 import MyInput from '../../components/input/input';
 import './register.css'
+import { ChevronLeft } from 'lucide-react';
+
 const Register = () => {
   const [, setLocation] = useLocation();
   const [user, setUser] = useState('');
@@ -85,7 +87,7 @@ const Register = () => {
     <>
     <div className='background'>
         <div className='register-top'>
-            <div onClick={handleBack} className='register-goback'>返回</div>
+            <ChevronLeft onClick={handleBack} className='register-goback'></ChevronLeft>
             <div onClick={login} className='register-login'>登录</div>
         </div>
         <div className='welcome'>

@@ -10,18 +10,19 @@
 .register-top{
     display: flex;
     margin: 2% 0 10% 0;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .register-goback{
     color: #f4c884;
     width: 40px;
-    margin: 2% 70% 0 5%;
+    height: 40px;
+    margin: 2% 70% 0 2%;
 }
 
 .register-login{
     color: #f4c884;
-    width: 40px;
+    width: 50px;
     margin: 2% 0 0 0;
 }
 

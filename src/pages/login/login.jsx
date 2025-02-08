@@ -1,14 +1,15 @@
-import React,{ useState ,useContext ,useEffect}from 'react';  
+import React,{ useState ,useContext }from 'react';  
 import axios from 'axios';
 import { useLocation } from 'wouter';  
 import MyInput from '../../components/input/input';
 import './login.css'
 import { setToken } from '../../utils/auth';
 import { UserContext } from '../../utils/userContext';
+import { ChevronLeft } from 'lucide-react';
 
 const Login = () => {  
 
-  const{ userData ,setUserData ,loadS , setLoadS } = useContext(UserContext)
+  const{ userData ,setUserData , setLoadS } = useContext(UserContext)
 
   const [, setLocation] = useLocation();
   const [user, setUser] = useState('');  
@@ -90,7 +91,7 @@ const Login = () => {
     <>
     <div className='login-background' id='visible'>
         <div className='login-top'>
-            <div onClick={handleBack} className='login-goback'>返回</div>
+          <ChevronLeft onClick={handleBack} className='login-goback'></ChevronLeft>
         </div>
         <div className='welcome'>
             <b>

@@ -3,6 +3,7 @@ import './setMine.css'
 import { useLocation } from "wouter";
 import BirthdaySelector from "../../components/birthdayPicker/BrthdaySelector";
 import { Modal } from "antd";
+import { ChevronLeft } from 'lucide-react';
 
 const SetMine = () => {
     const [, setLocation] = useLocation();
@@ -110,12 +111,12 @@ const SetMine = () => {
                 </div>
                 <div className='set-text1'>
                     <div>兴趣</div>
-                    <textarea value={interest} onChange={(e)=>{setInterest(e.target.value)}} id="myTextarea"  rows="2" cols="23">
+                    <textarea value={interest} onChange={(e)=>{setInterest(e.target.value)}} className="myTextarea"  rows="2" cols="23">
                     </textarea>
                 </div>
                  <div className='set-text2'>
                     <div>状态</div>
-                    <textarea value={status} onChange={(e)=>{setStatus(e.target.value)}} id="myTextarea"  rows="2" cols="23"></textarea>
+                    <textarea value={status} onChange={(e)=>{setStatus(e.target.value)}} className="myTextarea"  rows="2" cols="23"></textarea>
                 </div>
                 <button onClick={update} className='set-b'>添加</button>
                 <button onClick={pass} className='set-b'>跳过</button> 
@@ -147,9 +148,16 @@ const SetNickname = () => {
     return (
     <>
     <div className='set-Nbg'>
-        <div className='set-goback'>返回</div>
+        <ChevronLeft className='set-goback'></ChevronLeft>
         <div className='set-N'>输入一个昵称<br></br>供好友查看</div>
-        <input value={nickName} onChange={(e)=>{SetNickname(e.target.value)}} placeholder='输入昵称' type="text" className='set-input'/>
+        <input 
+            value={nickName} 
+            onChange={(e)=>{
+                e.preventDefault() 
+                SetNickname(e.target.value)}}
+            placeholder='输入昵称'
+            type="text" 
+            className='set-input'/>
         <div className='set-warn'>冒犯他人的昵称将会被停用</div>
         <button onClick={comfirm} className='set-b'>确认</button>
     </div>

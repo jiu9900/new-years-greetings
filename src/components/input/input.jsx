@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.css';
 
-const MyInput = ({ placeholder, className, value, onChange , type ,warn }) => {
+const MyInput = ({ placeholder, value, onChange , type ,warn }) => {
     if(warn===undefined){
         warn=false
     }

@@ -8,16 +8,15 @@
 }
 
 .login-top {
-
     display: flex;
     margin: 2% 0 10% 0;
-    font-size: 20px;
 }
 
 .login-goback {
     color: #f4c884;
     width: 40px;
-    margin: 2% 70% 0 5%;
+    height: 40px;
+    margin: 2% 70% 0 2%;
 }
 
 
