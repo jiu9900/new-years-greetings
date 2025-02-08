@@ -11,7 +11,10 @@
     color: red;
 }
 
-input {
+.input {
+    font-size: 1rem;
+    outline: none;
+    padding: 0 2%;
     margin: 2%;
     line-height: 2.5rem;
     width: 70%;

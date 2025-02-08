@@ -1,0 +1,135 @@
+.set-fill{
+    font-family: shuhei;
+    font-size: 2rem;
+    color: #f4c884;
+    margin: 10% 25% 0 25%;
+}
+
+.set-Nbg {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(244, 160, 160);
+    width: 100%;
+    height: 100vh;
+}
+.set-bg {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(244, 160, 160);
+    width: 100%;
+    height: 100vh;
+}
+
+.setForm{
+    font-family: shuhei;
+    margin: 10% 15%;
+}
+
+.setGender{
+    border-radius: 1.5rem  1.5rem 0 0;
+    color: #9c7979;
+    padding:8% 0 4% 0;
+    background-color: #cccaca;
+    font-size: 1rem;
+    border-bottom: 1px solid #9c7979;
+    >label{
+        margin-right: 5%;
+    }
+    >input{
+        outline: none;
+    }
+}
+
+.bir{ 
+    color: #9c7979;
+    padding: 4%; 
+    border-bottom: 1px solid #9c7979;
+    background-color: #cccaca;
+}
+
+.set-goback{
+    text-align: left;
+    padding: 3%;
+}
+
+.set-N{
+    font-family: shuhei;
+    color: #f4c884;
+    margin: 15% 20% 10% 20%;
+    font-size: 2.5rem;
+}
+
+.set-input{
+    font-family: shuhei;
+    width: 70%;
+    margin: 3% auto;
+    height: 4rem;
+    font-size: 3rem;
+    background-color:#cccaca ;
+    border: none;
+    text-align: center;
+    border-radius:1.5rem ;
+    outline: none;
+    padding: 0 5%;
+}
+
+.set-b{
+    font-family: shuhei;
+    font-size: 2rem;
+    line-height: 0;
+    align-self: center;
+    background-color: #f4c884;
+    color: #a27823;
+    width: 60%;
+    height: 4rem;
+    margin-top: 15%;
+    border-radius: 2rem;
+}
+
+.set-warn{
+    font-family: shuhei;
+    margin-top: 3%;
+    color: #cccaca;
+    margin-bottom: 10%;
+}
+
+.d div{
+    display: inline;
+}
+
+.bir-container{
+    align-items: center;
+    width: 20rem;
+}
+
+.set-text1 , .set-text2 {
+    background-color: #cccaca;
+    padding-left: 5%;
+    font-size: 1rem;
+    color: #9c7979;
+    display: flex;
+    align-items: top;
+    border-bottom:1px solid #9c7979;
+    >div {
+        margin-top: 1.5rem;
+    }
+}
+
+.set-text2{
+    border-radius:0 0 1.5rem 1.5rem;
+}
+
+#myTextarea {
+    border: 1px solid #9c7979;
+    resize: none;
+    color: #9c7979;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 5%;
+    background-color: #cccaca;
+    outline: none;
+}

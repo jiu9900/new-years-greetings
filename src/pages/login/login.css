@@ -22,6 +22,7 @@
 
 
 .login-welcome {
+    font-family: shuhei;
     color: #f4c884;
     font-size: 30px;
     margin: 10% 25%;
@@ -34,6 +35,7 @@
 }
 
 .login {
+    font-family: shuhei;
     width: 70%;
     height: 3.5rem;
     margin-top: 10%;

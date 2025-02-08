@@ -1,11 +1,15 @@
-import React,{ useState }from 'react';  
+import React,{ useState ,useContext ,useEffect}from 'react';  
 import axios from 'axios';
 import { useLocation } from 'wouter';  
-import Input from '../../components/input/input';
+import MyInput from '../../components/input/input';
 import './login.css'
 import { setToken } from '../../utils/auth';
+import { UserContext } from '../../utils/userContext';
 
 const Login = () => {  
+
+  const{ userData ,setUserData ,loadS , setLoadS } = useContext(UserContext)
+
   const [, setLocation] = useLocation();
   const [user, setUser] = useState('');  
   const [password, setPassword] = useState('');  
@@ -26,16 +30,16 @@ const Login = () => {
       onChange: (e) => setPassword(e.target.value)
     }]
 
-
   //方法 
   const login = (event) => {  //提交
-    event.preventDefault(); 
-    if(check())  {
-        setSubmittedData({ user, password }); // 更新提交的数据  
-        setUser(''); // 清空表单  
-        setPassword('');
-        upload()
-    }
+    setLocation('/set/nickname')
+    // event.preventDefault(); 
+    // if(check())  {
+    //     setSubmittedData({ user, password }); 
+    //     setUser('');  
+    //     setPassword('');
+    //     upload()
+    // }
   }; 
   
   const upload = async () => {
@@ -47,6 +51,7 @@ const Login = () => {
       });
 
       setToken(response.data.token);
+      setUserData(response.data.user)
       console.log('Login successful');
     } catch (err) {
       setError(
@@ -69,6 +74,7 @@ const Login = () => {
   }
 
   const handleBack = () => {  //返回
+    setLoadS(true)
     setLocation('/')
   };  
 
@@ -77,12 +83,12 @@ const Login = () => {
   }
 
   const register = () => {//注册
-
+    setLocation('/register')
   }
 
   return (  
     <>
-    <div className='login-background'>
+    <div className='login-background' id='visible'>
         <div className='login-top'>
             <div onClick={handleBack} className='login-goback'>返回</div>
         </div>
@@ -95,7 +101,7 @@ const Login = () => {
             <form>
                 {inputList.map((item, index) => (
             <div key={index}>
-              <Input
+              <MyInput
                 className={item.className}
                 placeholder={item.placeholder}
                 type={item.type}
@@ -106,7 +112,7 @@ const Login = () => {
           ))}
           <div onClick={forget} className='forget' >忘记密码</div>
             <button onClick={login} className='login'>登录</button>
-            <div><p className='text'>您还不是会员，请<div onClick={login-register} className='login-register'>注册</div></p></div>
+            <div><p className='text'>您还不是会员，请</p><p onClick={register} className='login-register'>注册</p></div>
             </form>
         </div>
     </div>

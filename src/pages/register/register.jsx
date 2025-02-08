@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'wouter';
-import Input from '../../components/input/input';
+import MyInput from '../../components/input/input';
 import './register.css'
 const Register = () => {
   const [, setLocation] = useLocation();
@@ -78,6 +78,7 @@ const Register = () => {
   };
 
   const login = () => {
+    setLocation('/login')
   };
 
   return (  
@@ -89,14 +90,14 @@ const Register = () => {
         </div>
         <div className='welcome'>
             <b>
-                欢迎登录春节祝福小程序
+                欢迎注册春节祝福小程序
             </b>
         </div>
         <div className='Rform'>
             <form>
              {inputList.map((item, index) => (
             <div key={index}>
-              <Input
+              <MyInput
                 className={item.className}
                 placeholder={item.placeholder}
                 type={item.type}

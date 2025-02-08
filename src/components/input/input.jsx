@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.css';
 
-const Input = ({ placeholder, className, value, onChange , type ,warn }) => {
+const MyInput = ({ placeholder, className, value, onChange , type ,warn }) => {
     if(warn===undefined){
         warn=false
     }
@@ -29,4 +29,4 @@ const Input = ({ placeholder, className, value, onChange , type ,warn }) => {
   );
 };
 
-export default Input;
+export default MyInput;
