@@ -1,23 +1,25 @@
-.background{
-    margin: auto;
-    display: flex;
-    flex-direction:column ;
-    background-color: rgb(244, 160, 160);
-    height: 100%;
-    width: 100%;
-}
+.background {
+     background-image: url('src/assets/login/background.png');
+     margin: auto;
+     display: flex;
+     background-position: bottom;
+     flex-direction: column;
+     height: 969px;
+     width: 440px;
+ }
 
 .register-top{
     display: flex;
-    margin: 2% 0 10% 0;
-    font-size: 25px;
+    background-image: url('src/assets/register/Group 6.png');
+    height: 108px;
 }
 
 .register-goback{
+    background-image: url('src/assets/register/arrow_back.png');
     color: #f4c884;
     width: 40px;
     height: 40px;
-    margin: 2% 70% 0 2%;
+    margin: 54px 0 0 24px;
 }
 
 .register-login{
@@ -26,21 +28,36 @@
     margin: 2% 0 0 0;
 }
 
-.welcome{
-    font-family: shuhei;
-    color: #f4c884;
-    font-size: 30px;
-    margin: 10% 25%;
+.reg-form{
+    background-image: url('src/assets/register/Group 8.png');
+    height: 490px;
+    width: 378px;
+    padding-top: 12px;
+    margin: 150px auto;
 }
 
 .register{
-    font-family: shuhei;
-    width: 70%;
-    height: 3rem;
-    margin-top: 10%;
-    border-radius: 20px;
-    background-color: #f4c884;
-    color: #a27823;
-    font-size: 30px;
-    line-height: 0px;
+    background-image: url('src/assets/register/Group 1.png');
+    margin: 62px 0 0 40px;
+    width: 315px;
+    height: 83px;
+}
+.gotoLogin{
+    display: flex;
+    margin: 15.5px 0 0 112px;
+    font-size: 18px;
+    background-color: #fbf7f1;
+    line-height: 18px;
+}
+.have{
+    height: 18px;
+    width: 108px;
+}
+
+.goL{
+    margin-left: 2px;
+    color: #890007;
+    height: 18px;
+    width: 36px;
+    cursor: pointer;
 }

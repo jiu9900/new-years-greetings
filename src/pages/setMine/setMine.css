@@ -28,12 +28,12 @@
 }
 
 .setGender{
+    align-items: start;
     border-radius: 1.5rem  1.5rem 0 0;
     color: #9c7979;
     padding:8% 0 4% 0;
     background-color: #cccaca;
     font-size: 1rem;
-    border-bottom: 1px solid #9c7979;
     >label{
         margin-right: 5%;
     }
@@ -45,7 +45,6 @@
 .bir{ 
     color: #9c7979;
     padding: 4%; 
-    border-bottom: 1px solid #9c7979;
     background-color: #cccaca;
 }
 
@@ -107,20 +106,23 @@
 }
 
 .set-text1 , .set-text2 {
+    padding-top: 2%;
     background-color: #cccaca;
     padding-left: 5%;
     font-size: 1rem;
     color: #9c7979;
     display: flex;
+    flex-direction: column;
     align-items: top;
-    border-bottom:1px solid #9c7979;
-    >div {
-        margin-top: 1.5rem;
+    >div{
+        text-align: start;
+        padding-left: 5%;
     }
 }
 
 .set-text2{
     border-radius:0 0 1.5rem 1.5rem;
+    padding-bottom: 5%;
 }
 
 .myTextarea {
@@ -129,9 +131,9 @@
     color: #9c7979;
     font-family: Arial, sans-serif;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 1rem;
-    margin: 5%;
+    margin: 1% 5%;
     background-color: #cccaca;
     outline: none;
 }

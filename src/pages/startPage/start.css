@@ -1,14 +1,20 @@
-.goToLogin,
+.happynewyear{
+    background-image: url('src/assets/start/image 4.png');
+    width: 354px;
+    height: 327px;
+    margin-top: 150px;
+}
+
+.goToLogin{
+    background-image: url('src/assets/start/Group 1.png');
+    width: 244px;
+    height: 69px;
+    margin-top: 100px;
+}
 .goToRegister {
-    font-family: shuhei;
-    width: 70%;
-    height: 3rem;
-    align-self: center;
-    margin-top: 10%;
-    border-radius: 20px;
-    background-color: #f4c884;
-    color: #a27823;
-    font-size: 30px;
-    text-align: center;
+    background-image: url('src/assets/start/Group 2.png');
+    width: 244px;
+    height: 69px;
+    margin-top: 20px;
 }
 

@@ -1,58 +1,95 @@
 .login-background {
+    background-image: url('src/assets/login/background.png');
     margin: auto;
     display: flex;
+    background-position: bottom;
     flex-direction: column;
-    background-color: rgb(244, 160, 160);
-    height: 100%;
-    width: 100%;
+    height:969px;
+    width: 440px;
 }
 
 .login-top {
+    z-index: 2;
     display: flex;
-    margin: 2% 0 10% 0;
+    background-image: url('src/assets/login/top.png');
+    height: 108px;
 }
 
 .login-goback {
-    color: #f4c884;
-    width: 40px;
-    height: 40px;
-    margin: 2% 70% 0 2%;
+    background-image: url('src/assets/login/arrow-back.png');
+    z-index: 3;
+    height: 41px;
+    width: 42px;
+    margin-top: 54px;
+    margin-left: 25px;
+    cursor: pointer;
 }
 
-
-.login-welcome {
-    font-family: shuhei;
-    color: #f4c884;
-    font-size: 30px;
-    margin: 10% 25%;
+.Rform {
+    margin-top: 150px;
+    margin-left: 25px;
+    height: 445px;
+    width: 380px;
+    background-image: url('src/assets/login/form.png')
+}
+.input0,.input1 {
+    font-size: 1rem;
+    outline: none;
+    padding: 0 2%;
+    margin-top: 49.5px;
+    margin-left: 14px;
+    line-height: 2.5rem;
+    width: 279px;
+    height: 53px;
+    border-radius: 16px;
+    border: solid 2.5px #cab8a5;
+    background-color: #fbf7f1;
+}
+.input1{
+    margin-top: 35px;
 }
 
 .forget{
-    font-size: 0.75rem;
-    width: 40%;
-    color: #f4c884;
+    cursor:default;
+    background-color: #fbf7f1;
+    font-size: 18px;
+    width: 286.9px;
+    margin-left: 50px;
+    margin-top: 23.5px;
+    text-align: end;
+    color: black;
 }
 
 .login {
+    cursor: pointer;
     font-family: shuhei;
-    width: 70%;
-    height: 3.5rem;
-    margin-top: 10%;
+    width: 260px;
+    margin: 50px 0 0 0;
+    height: 69px;
     border-radius: 20px;
-    background-color: #f4c884;
-    color: #a27823;
+    background-color: #8a0000;
+    color: #d7a9a8;
     font-size: 30px;
     line-height: 0px;
+    border: none;
     margin-bottom: 3%;
 }
 
+.loginTurn{
+    width: 300px;
+    margin-top:9px;
+    background-color: #fbf7f1;
+    margin-left: 48px;
+    font-size: 18px;
+}
+
 .text{
-    width: 10rem;
+    cursor: default;
     display: inline;
 }
 
 .login-register{
-    width: 2rem;
+    cursor: pointer;
     display: inline;
-    color: #f4c884;
+    color: #981f1f;
 }

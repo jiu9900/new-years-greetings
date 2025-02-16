@@ -1,20 +1,17 @@
 import { useState ,useContext }from 'react';  
 import axios from 'axios';
 import { useLocation } from 'wouter';  
-import MyInput from '../../components/input/input';
 import './login.css'
 import { setToken } from '../../utils/auth';
 import { UserContext } from '../../utils/userContext';
-import { ChevronLeft } from 'lucide-react';
 
 const Login = () => {  
 
-  const{ userData ,setUserData , setLoadS } = useContext(UserContext)
+  const{ setUserData , setLoadS } = useContext(UserContext)
 
   const [, setLocation] = useLocation();
   const [user, setUser] = useState('');  
   const [password, setPassword] = useState('');  
-  const [submittedData, setSubmittedData] = useState(null); 
   const [error, setError] = useState('');
 
   const inputList = [
@@ -28,31 +25,30 @@ const Login = () => {
       placeholder: '密码...',
       type: 'password',
       value: password,
+      className:'pas',
       onChange: (e) => setPassword(e.target.value)
     }]
 
   //方法 
   const login = (event) => {  //提交
-    setLocation('/set/nickname')
-    // event.preventDefault(); 
-    // if(check())  {
-    //     setSubmittedData({ user, password }); 
-    //     setUser('');  
-    //     setPassword('');
-    //     upload()
-    // }
+    event.preventDefault(); 
+    if(check()){
+      upload()
+    }
   }; 
   
   const upload = async () => {
     try {
-      const response = await axios.post('url', submittedData, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
+      const response = await axios.post('http://192.168.192.26:8080/login', {
+        username:user.toString(),
+        password:password.toString()
       });
-
+      setUser('');  
+      setPassword('');
       setToken(response.data.token);
-      setUserData(response.data.user)
+      setUserData(response.data.user);
+      console.log(response)
+      setLocation('/set/nickname')
       console.log('Login successful');
     } catch (err) {
       setError(
@@ -91,29 +87,25 @@ const Login = () => {
     <>
     <div className='login-background' id='visible'>
         <div className='login-top'>
-          <ChevronLeft onClick={handleBack} className='login-goback'></ChevronLeft>
-        </div>
-        <div className='welcome'>
-            <b>
-                欢迎登录春节祝福小程序
-            </b>
+          <div onClick={handleBack} className='login-goback'></div>
         </div>
         <div className='Rform'>
             <form>
                 {inputList.map((item, index) => (
             <div key={index}>
-              <MyInput
-                className={item.className}
+              <input
+              className={'input'+index}
                 placeholder={item.placeholder}
                 type={item.type}
                 value={item.value}
                 onChange={item.onChange}
-              />
+                required
+               />
             </div>
           ))}
-          <div onClick={forget} className='forget' >忘记密码</div>
-            <button onClick={login} className='login'>登录</button>
-            <div><p className='text'>您还不是会员，请</p><p onClick={register} className='login-register'>注册</p></div>
+            <div onClick={forget} className='forget' >忘记密码 ？</div>
+            <button onClick={login} className='login'>登 录</button>
+            <div className='loginTurn'><p className='text'>还没有账号 ？ </p><p onClick={register} className='login-register'>立即注册</p></div>
             </form>
         </div>
     </div>

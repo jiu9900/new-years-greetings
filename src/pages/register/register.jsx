@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'wouter';
 import MyInput from '../../components/input/input';
 import './register.css'
-import { ChevronLeft } from 'lucide-react';
-
+import axios from 'axios';
 const Register = () => {
   const [, setLocation] = useLocation();
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-  const [submittedData, setSubmittedData] = useState(null);
   const [inputStyle, setInputStyle] = useState({
     warn: false,
     placeholder: '确认密码'
@@ -40,20 +38,24 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (check()) {
-      setSubmittedData({ user, password });
-      alert('注册成功！');
-      setUser('');
-      setPassword('');
-      setPassword2('');
-      upload();
+      upload();    
     }
   };
 
-  const upload = () => {
-    // Handle data submission here
-    console.log('Submitted data:', submittedData);
-  };
-
+  const upload = async () => {  
+    try {  
+      const response = await axios.post('http://192.168.192.26:8080/register', {
+        username:user.toString(),
+        password:password.toString()
+      });
+      setUser('');
+      setPassword('');
+      setPassword2('');
+      setLocation('/login');
+    } catch (error) {  
+      console.error(error);  
+    }  
+  }; 
   const check = () => {
     if (user === '') {
       alert('账户不能为空');
@@ -87,16 +89,10 @@ const Register = () => {
     <>
     <div className='background'>
         <div className='register-top'>
-            <ChevronLeft onClick={handleBack} className='register-goback'></ChevronLeft>
-            <div onClick={login} className='register-login'>登录</div>
+            <div onClick={handleBack} className='register-goback'></div>
         </div>
-        <div className='welcome'>
-            <b>
-                欢迎注册春节祝福小程序
-            </b>
-        </div>
-        <div className='Rform'>
-            <form>
+        <div>
+            <form className='reg-form'>
              {inputList.map((item, index) => (
             <div key={index}>
               <MyInput
@@ -108,8 +104,8 @@ const Register = () => {
               />
             </div>
           ))}
-            
-            <button onClick={handleSubmit} type="submit" className='register'>注册</button>  
+            <div onClick={handleSubmit} type="submit" className='register'></div>  
+            <div className='gotoLogin'><div className='have'>已有账号，去</div><div className='goL' onClick={login}>登录</div></div>
             </form>
         </div>
     </div>

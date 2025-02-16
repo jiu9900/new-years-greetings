@@ -1,24 +1,14 @@
-.warn {
-    margin: 2%;
-    line-height: 2.5rem;
-    width: 70%;
-    border-radius: 10px;
-    background-color: #cccaca;
-    border: solid 2px red;
-}
-
-.warn::placeholder {
-    color: red;
-}
 
 .input {
     font-size: 1rem;
     outline: none;
     padding: 0 2%;
-    margin: 2%;
+    margin-top: 36px;
+    margin-left: 14px;
     line-height: 2.5rem;
-    width: 70%;
-    border-radius: 10px;
-    border: none;
-    background-color: #cccaca;
+    width: 279px;
+    height: 53px;
+    border-radius: 16px;
+    border:solid 2.5px #cab8a5;
+    background-color:#fbf7f1;
 }

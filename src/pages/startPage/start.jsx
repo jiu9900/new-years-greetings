@@ -16,19 +16,14 @@ const Start = () => {
     };
     return (
         <>
-
         <Loading
         loadS={loadS}
         setLoadS={setLoadS}
         loadingPage={<>loading</>}
         content={<>
-        <div className='happynewyear'>新年快乐</div>
-                <div className='goToLogin' onClick={goToLogin}>
-                登录
-                </div>
-                <div className='goToRegister' onClick={goToRegister}>
-                注册
-                </div>
+            <div className='happynewyear'></div>
+            <div className='goToLogin' onClick={goToLogin}></div>
+            <div className='goToRegister' onClick={goToRegister}></div>
         </>}
         >
         </Loading>

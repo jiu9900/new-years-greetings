@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import {useEffect} from 'react'
 import './loading.css'
 const Loading = ({loadS ,setLoadS ,loadingPage ,content}) => {
 

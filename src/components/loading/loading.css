@@ -1,27 +1,27 @@
 .bg {
-    left: 0;
+    z-index: 1;
     top: 0;
     position: absolute;
-    opacity: 1;
     transition: all 1s ease-in;
-    margin: auto;
     display: flex;
     flex-direction: column;
     background-color: rgb(244, 160, 160);
-    height: 100vh;
-    width: 100vw;
+    height: 956px;
+    background-image:url('src/assets/start/背景1.png') ;
+    width: 440px;
+    align-items: center;
 }
 
 #loading {
-    left: 0;
     z-index: 2;
     background-color: #f4c884;
-    height: 100vh;
-    width: 100vw;
+    width: 440px;
     position: relative;
+    height: 956px;
     transition: all .5s ease-out;
 }
 
 .Ovo {
-    width: 100vw;
+    height: 956px;
+    width: 440px;
 }

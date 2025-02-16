@@ -1,118 +1,63 @@
-import React,{ useState } from "react";
+import { useState } from "react";
 import './setMine.css'
 import { useLocation } from "wouter";
-import BirthdaySelector from "../../components/birthdayPicker/BrthdaySelector";
-import { Modal } from "antd";
 import { ChevronLeft } from 'lucide-react';
-
+import axios from "axios";
+import { getToken } from "../../utils/auth";
 const SetMine = () => {
     const [, setLocation] = useLocation();
-    const [birthday ,setBirthday] = useState({})
-
-    const [visiable ,setVisiable] = useState(false)
-
-    const [birth ,setBirth] = useState('')
-    const [age,setAge] = useState('')
+    const [birthday ,setBirthday] = useState('')
     const [interest,setInterest] = useState('')
     const [status,setStatus] = useState('')
     const [gender,setGender] = useState('')
 
-    const setList =[
-        // {
-        //     content:'生日',
-        //     value:birth,
-        //     event:(e) => setBirth(e.target.value)
-        // },{
-        //     content:'年龄',
-        //     value:age,
-        //     event:(e) => setAge(e.target.value)
-        // },
-        {
-            content:'兴趣',
-            value:interest,
-            event:(e) => setInterest(e.target.value)
-        },{
-            content:'状态',
-            value:status,
-            event:(e) => setStatus(e.target.value)
-        },
-    ]
+    var Data
 
     const pass = () => {
         setLocation('/')
     }
 
     const update = () => {
-        const Data ={
-            age:{age},
-            birthday:{birth},
+        Data ={
+            birthday:{birthday},
             interests:{interest},
-            status:{status}
+            status:{status},
+            gender:{gender}
         }
-
+        console.log(Data)
+        load()
     }
 
-    const onOk = () => {
-        closeModal();
-    };
- 
-    const closeModal = () => {
-        setVisiable(false);
-    };
-
-    const calculateAge = (birthDate) => {  
-        const today = new Date();  
-        const birth = new Date(birthDate);  
-        let age = today.getFullYear() - birth.getFullYear();  
-        const monthDifference = today.getMonth() - birth.getMonth();  
-
-        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birth.getDate())) {  
-            age--;  
-        }  
-
-        return age;  
-    }  
-
-    const open = () => {
-        setVisiable(true)
+    const load = async () =>{
+        try{
+            const res = await axios.put('http://192.168.192.26:8080/profile',{Data})
+            console.log(res.msg)   
+        }catch(error){
+            console.log(error)
+        }
     }
 
     return (
         <>
         <div className='set-bg'>
-            <Modal
-                title="选择你的生日"
-                open={visiable}
-                onOk={onOk}
-                onCancel={closeModal}
-                afterClose={closeModal}
-            >
-                <div className="bir-container">
-                    <BirthdaySelector 
-                    value={birthday}
-                    setValue={setBirthday}
-                    ></BirthdaySelector>
-                </div>
-            </Modal>
             <div className="set-fill">
                 让我们来填写你的资料卡
             </div>
             <form className="setForm">
                 <div className='setGender' value={gender} onChange={(e)=>{setGender(e.target.value)}}>
                     性别：
-                    <label><input type='radio' name='gender' value='男'></input>男</label>
-                    <label><input type='radio' name='gender' value='女'></input>女</label>
+                    <label><input type='radio' name='gender' value='male'></input>男</label>
+                    <label><input type='radio' name='gender' value='female'></input>女</label>
                 </div>
-                <div className="bir" onClick={open}>
-                    年龄：{' '} {typeof(birthday.month) == "undefined" ? '未知(点击设置年龄与生日)':calculateAge(birthday.year+'-'+birthday.month+'-'+birthday.day)}
-                </div>
-                <div className="bir" onClick={open}>
-                    生日：{'        '} {typeof(birthday.month) == "undefined" ? '未知(点击设置年龄与生日)': birthday.month+'-'+birthday.day}
+               <div className='set-text1'>
+                    <div>生日</div>
+                    <input value={birthday} onChange={(e)=>{setBirthday(e.target.value)}} className="myTextarea">
+                    </input>
                 </div>
                 <div className='set-text1'>
                     <div>兴趣</div>
-                    <textarea value={interest} onChange={(e)=>{setInterest(e.target.value)}} className="myTextarea"  rows="2" cols="23">
-                    </textarea>
+                    <input value={interest} onChange={(e)=>{setInterest(e.target.value)}} className="myTextarea">
+                    </input>
                 </div>
                  <div className='set-text2'>
                     <div>状态</div>
@@ -131,17 +76,35 @@ export default SetMine
 
 const SetNickname = () => {
 
-    const [nickName,SetNickname] = useState('')
+    const [nickName,setNickname] = useState('')
     const [,setLocation] = useLocation()
 
 
     const comfirm = () => {
         if(check){
-            setLocation('/set/info')
+            upload()
         }
     }
 
+    const upload = async () =>{
+        try{
+            const token = getToken();  
+            const res = await axios.put('http://192.168.192.26:8080/profile',{
+                nickName:{nickName}},{
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            console.log(res)
+            setLocation('/set/info')
+        }catch{
+            alert('重新输入')
+        }
+    }
     const check = () => {
+        if(nickName===''){
+            alert('昵称不能为空')
+        }
         return true
     }
 
@@ -154,7 +117,7 @@ const SetNickname = () => {
             value={nickName} 
             onChange={(e)=>{
                 e.preventDefault() 
-                SetNickname(e.target.value)}}
+                setNickname(e.target.value)}}
             placeholder='输入昵称'
             type="text" 
             className='set-input'/>
