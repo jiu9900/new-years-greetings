@@ -1,24 +1,47 @@
 import { useState } from "react";
 import './setMine.css'
 import { useLocation } from "wouter";
-import { ChevronLeft } from 'lucide-react';
 import axios from "axios";
 import { getToken } from "../../utils/auth";
 const SetMine = () => {
     const [, setLocation] = useLocation();
-    const [birthday ,setBirthday] = useState('')
-    const [interest,setInterest] = useState('')
-    const [status,setStatus] = useState('')
+    const [nickName,setNickname] = useState('')
     const [gender,setGender] = useState('')
+    const [birthday ,setBirthday] = useState('')
+    const [status,setStatus] = useState('')
+    const [interest,setInterest] = useState('')
 
     var Data
 
+    const setList = [{
+       title:"昵称",
+       value:nickName,
+       placeholder:'Sduers',
+       setValue:(e)=>{setNickname(e.target.value)}
+    },{
+       title:"性别",
+       value:gender,
+       placeholder:'男/女/未知...',
+       setValue:(e)=>{setGender(e.target.value)}
+    },{
+       title:"生日",
+       value:birthday,
+       placeholder:'mm/dd',
+       setValue:(e)=>{setBirthday(e.target.value)}
+    },{
+       title:"状态",
+       value:status,
+       placeholder:'饥饿中/睡觉ing.../困了',
+       setValue:(e)=>{setStatus(e.target.value)}
+    }]
+
     const pass = () => {
-        setLocation('/')
+        setLocation('/showCase')
     }
 
     const update = () => {
         Data ={
+            nickName:{nickName},
             birthday:{birthday},
             interests:{interest},
             status:{status},
@@ -30,8 +53,15 @@ const SetMine = () => {
 
     const load = async () =>{
         try{
-            const res = await axios.put('http://192.168.192.26:8080/profile',{Data})
-            console.log(res.msg)   
+            const token = getToken(); 
+            const res = await axios.put('http://192.168.192.26:8080/profile',
+            {Data},{
+                    headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            pass()
+            console.log(res)   
         }catch(error){
             console.log(error)
         }
@@ -39,92 +69,40 @@ const SetMine = () => {
 
     return (
         <>
-        <div className='set-bg'>
-            <div className="set-fill">
-                让我们来填写你的资料卡
+        <div className='set-background'>
+            <div className="set-top">
+                <div className="set-top1">注册</div>
+                <div onClick={pass} className="set-top2">跳过</div>
             </div>
             <form className="setForm">
-                <div className='setGender' value={gender} onChange={(e)=>{setGender(e.target.value)}}>
-                    性别：
-                    <label><input type='radio' name='gender' value='male'></input>男</label>
-                    <label><input type='radio' name='gender' value='female'></input>女</label>
+                {setList.map((item)=>{
+                    return (
+                    <div className="set-ctn" key={item.title}>
+                        <div className="set-title">{item.title}</div>
+                        <input
+                        className="set-input"
+                        placeholder={item.placeholder}
+                        value={item.value}
+                        onChange={item.setValue}
+                        >
+                        </input>
+                    </div>)
+                })}
+                <div className='set-text'>
+                    <div className="set-title">兴趣</div>
+                    <textarea
+                    placeholder="跑步/打篮球/阅读/看小说/追剧/追番/..."
+                    value={interest}
+                    onChange={(e)=>{setInterest(e.target.value)}}
+                    className="myTextarea"  
+                    rows="3" 
+                    cols="26"></textarea>
                 </div>
-               <div className='set-text1'>
-                    <div>生日</div>
-                    <input value={birthday} onChange={(e)=>{setBirthday(e.target.value)}} className="myTextarea">
-                    </input>
-                </div>
-                <div className='set-text1'>
-                    <div>兴趣</div>
-                    <input value={interest} onChange={(e)=>{setInterest(e.target.value)}} className="myTextarea">
-                    </input>
-                </div>
-                 <div className='set-text2'>
-                    <div>状态</div>
-                    <textarea value={status} onChange={(e)=>{setStatus(e.target.value)}} className="myTextarea"  rows="2" cols="23"></textarea>
-                </div>
-                <button onClick={update} className='set-b'>添加</button>
-                <button onClick={pass} className='set-b'>跳过</button> 
             </form>
+            <div onClick={update} className="set-btn"></div>
         </div>
         </>
     );
 }
 
 export default SetMine
-
-
-const SetNickname = () => {
-
-    const [nickName,setNickname] = useState('')
-    const [,setLocation] = useLocation()
-
-
-    const comfirm = () => {
-        if(check){
-            upload()
-        }
-    }
-
-    const upload = async () =>{
-        try{
-            const token = getToken();  
-            const res = await axios.put('http://192.168.192.26:8080/profile',{
-                nickName:{nickName}},{
-                headers:{
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            console.log(res)
-            setLocation('/set/info')
-        }catch{
-            alert('重新输入')
-        }
-    }
-    const check = () => {
-        if(nickName===''){
-            alert('昵称不能为空')
-        }
-        return true
-    }
-
-    return (
-    <>
-    <div className='set-Nbg'>
-        <ChevronLeft className='set-goback'></ChevronLeft>
-        <div className='set-N'>输入一个昵称<br></br>供好友查看</div>
-        <input 
-            value={nickName} 
-            onChange={(e)=>{
-                e.preventDefault() 
-                setNickname(e.target.value)}}
-            placeholder='输入昵称'
-            type="text" 
-            className='set-input'/>
-        <div className='set-warn'>冒犯他人的昵称将会被停用</div>
-        <button onClick={comfirm} className='set-b'>确认</button>
-    </div>
-    </>)
-}
-
-export {SetNickname}

@@ -4,7 +4,7 @@ import { useLocation } from 'wouter';
 import './login.css'
 import { setToken } from '../../utils/auth';
 import { UserContext } from '../../utils/userContext';
-
+import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {  
 
   const{ setUserData , setLoadS } = useContext(UserContext)
@@ -13,6 +13,7 @@ const Login = () => {
   const [user, setUser] = useState('');  
   const [password, setPassword] = useState('');  
   const [error, setError] = useState('');
+  const [isError ,setIsError] = useState(false);
 
   const inputList = [
     {
@@ -39,6 +40,9 @@ const Login = () => {
   
   const upload = async () => {
     try {
+      toast.loading('我知道你很急但你先别急∠( ᐛ 」∠)_',{
+        position:'top-center'
+      })
       const response = await axios.post('http://192.168.192.26:8080/login', {
         username:user.toString(),
         password:password.toString()
@@ -48,14 +52,22 @@ const Login = () => {
       setToken(response.data.token);
       setUserData(response.data.user);
       console.log(response)
-      setLocation('/set/nickname')
+      setLocation('/set')
       console.log('Login successful');
     } catch (err) {
       setError(
         err.response?.data?.message || 
         'Invalid email or password'
       );
-      alert({error})
+      setIsError(true)
+    } finally{
+      toast.dismiss()
+      if(isError){
+        toast.error(`失败了捏 ${' '}≡ᕕ( ᐛ )ᕗ`,{
+          position:'top-center',
+          hideProgressBar:true
+        })
+      }
     }
   }
 
@@ -108,6 +120,7 @@ const Login = () => {
             <div className='loginTurn'><p className='text'>还没有账号 ？ </p><p onClick={register} className='login-register'>立即注册</p></div>
             </form>
         </div>
+        <ToastContainer></ToastContainer>
     </div>
     </>
   );  

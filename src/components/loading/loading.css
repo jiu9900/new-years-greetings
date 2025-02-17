@@ -14,11 +14,11 @@
 
 #loading {
     z-index: 2;
-    background-color: #f4c884;
+    background-image: url('src/assets/loading/加载.png');
     width: 440px;
     position: relative;
     height: 956px;
-    transition: all .5s ease-out;
+    transition: all .2s ease-out;
 }
 
 .Ovo {

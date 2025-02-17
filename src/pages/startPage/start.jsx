@@ -1,4 +1,4 @@
-import React,{ useContext } from "react";
+import { useContext } from "react";
 import { useLocation } from "wouter";
 import './start.css';
 import { UserContext } from "../../utils/userContext";
@@ -8,7 +8,7 @@ const Start = () => {
     const { loadS , setLoadS } = useContext(UserContext)
 
     const goToLogin = () => {
-        setLocation("/login");
+        setLocation("/showCase");
     };
 
     const goToRegister = () => {
@@ -19,7 +19,7 @@ const Start = () => {
         <Loading
         loadS={loadS}
         setLoadS={setLoadS}
-        loadingPage={<>loading</>}
+        loadingPage={<></>}
         content={<>
             <div className='happynewyear'></div>
             <div className='goToLogin' onClick={goToLogin}></div>

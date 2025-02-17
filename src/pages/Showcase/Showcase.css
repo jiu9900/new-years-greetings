@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 969px;
+    width: 440px;
+    background-position:bottom ;
+    position: relative;
+    background-image: url("src/assets/showCase/receive/Background.png");
+  }
+  
+  .back-button {
+    background-image: url("src/assets/showCase/receive/arrow_back.png");
+    position: absolute;
+    top: 54px;
+    left: 23px;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .createBless {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  
+  .middle-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .top-section {
+    height: 107px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-image: url("src/assets/showCase/MyShowcase/Group\ 6.png");
+  }
+  
+  .middle-section {
+    height: 59px;
+    display: flex;
+    flex-direction: row;
+    background-image: url("src/assets/showCase/MyShowcase/Group\ 5.png");
+  }
+  .section1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+  }
+  .section2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+  }
+  
+  .bottom-section {
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .scrollable-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .scroll-button.left {
+    left: 10px;
+  }
+  
+  .scroll-button.right {
+    right: 10px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .share {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  
+  .blessUrl {
+    position: absolute;
+    margin: 0;
+    width: 90%;
+    height: 30%;
+    top: 35%;
+    left: 5%;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;pointer-events: auto;
+  }
+  
+  .clear{
+    position: absolute;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: none;
+    background-color: aliceblue;
+  }
+  
+  /* .clear:hover {
+    background-color: red;
+    border-radius: 10px;
+  } */
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明遮罩 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+  }
+
+  .success {
+    flex: 1;
+    margin: auto;
+    bottom: 0;
+  }
+  
+  .Myurl {
+    flex: 1;
+    margin: auto;
+  }
+
+  /* Inner */
+.scrollable-content {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    touch-action: none;
+    width: 100%;
+    height: 100%;
+}
+  
+.scrollable-item {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-radius: 20px;
+}

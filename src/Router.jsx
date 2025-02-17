@@ -1,9 +1,9 @@
-import React from "react"
 import { Route, Router } from 'wouter'; 
 import Start from './pages/startPage/start';
 import Login from './pages/login/login';
 import Register from "./pages/register/register";
-import SetMine,{SetNickname} from "./pages/setMine/setMine";
+import SetMine from "./pages/setMine/setMine";
+import Showcase from './pages/Showcase/Showcase';
 const MyRouter = () => {
     const router =[{
         path:"/", component:Start 
@@ -12,9 +12,9 @@ const MyRouter = () => {
     },{
         path:"/register",component:Register 
     },{
-        path:"/set/nickname",component:SetNickname
+        path:"/set",component:SetMine
     },{
-        path:"/set/info",component:SetMine
+        path:"/showCase",component:Showcase
     }]
 
     return (

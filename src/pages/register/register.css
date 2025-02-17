@@ -1,11 +1,11 @@
 .background {
-     background-image: url('src/assets/login/background.png');
-     margin: auto;
-     display: flex;
-     background-position: bottom;
-     flex-direction: column;
-     height: 969px;
-     width: 440px;
+    background-image: url('src/assets/login/background.png');
+    margin: auto;
+    display: flex;
+    background-position: bottom;
+    flex-direction: column;
+    height: 969px;
+    width: 440px;
  }
 
 .register-top{
@@ -20,6 +20,7 @@
     width: 40px;
     height: 40px;
     margin: 54px 0 0 24px;
+    cursor: pointer;
 }
 
 .register-login{
@@ -29,22 +30,25 @@
 }
 
 .reg-form{
-    background-image: url('src/assets/register/Group 8.png');
+    background-color: #fbf7f1;
     height: 490px;
-    width: 378px;
-    padding-top: 12px;
+    width: 370px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding-top: 14px;
     margin: 150px auto;
 }
 
 .register{
+    cursor: pointer;
     background-image: url('src/assets/register/Group 1.png');
-    margin: 62px 0 0 40px;
+    margin: 62px 0 0 30px;
     width: 315px;
     height: 83px;
 }
 .gotoLogin{
     display: flex;
-    margin: 15.5px 0 0 112px;
+    margin: 15.5px 50px 0 112px;
     font-size: 18px;
     background-color: #fbf7f1;
     line-height: 18px;

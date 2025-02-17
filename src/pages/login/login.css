@@ -27,26 +27,29 @@
 
 .Rform {
     margin-top: 150px;
-    margin-left: 25px;
-    height: 445px;
-    width: 380px;
-    background-image: url('src/assets/login/form.png')
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 444px;
+    width: 370px;
+    background-color: #fbf7f1;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 .input0,.input1 {
     font-size: 1rem;
     outline: none;
     padding: 0 2%;
-    margin-top: 49.5px;
-    margin-left: 14px;
+    margin-top: 40px;
+    margin-left: 0px;
     line-height: 2.5rem;
-    width: 279px;
+    width: 300px;
     height: 53px;
     border-radius: 16px;
     border: solid 2.5px #cab8a5;
     background-color: #fbf7f1;
 }
-.input1{
-    margin-top: 35px;
+.input0{
+    margin-top: 52px;
 }
 
 .forget{
@@ -54,7 +57,7 @@
     background-color: #fbf7f1;
     font-size: 18px;
     width: 286.9px;
-    margin-left: 50px;
+    margin-left: 44px;
     margin-top: 23.5px;
     text-align: end;
     color: black;
@@ -63,10 +66,10 @@
 .login {
     cursor: pointer;
     font-family: shuhei;
-    width: 260px;
-    margin: 50px 0 0 0;
-    height: 69px;
-    border-radius: 20px;
+    width: 310px;
+    margin: 46px 0 0 0;
+    height: 75px;
+    border-radius: 60px;
     background-color: #8a0000;
     color: #d7a9a8;
     font-size: 30px;

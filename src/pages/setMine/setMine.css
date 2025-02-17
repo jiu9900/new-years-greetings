@@ -1,53 +1,66 @@
-.set-fill{
-    font-family: shuhei;
-    font-size: 2rem;
-    color: #f4c884;
-    margin: 10% 25% 0 25%;
+.set-background {
+    background-image: url('src/assets/set/bg.png');
+    display: flex;
+    background-position: bottom;
+    flex-direction: column;
+    height: 957px;
+    width: 440px;
 }
 
-.set-Nbg {
-    margin: auto;
+.set-top{
+    background-image: url('src/assets/set/Group 6.png');
+    height: 108px;
+    width: 440px;
+    color: #ffe6be;
     display: flex;
-    flex-direction: column;
-    background-color: rgb(244, 160, 160);
-    width: 100%;
-    height: 100vh;
-}
-.set-bg {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(244, 160, 160);
-    width: 100%;
-    height: 100vh;
+    font-size: 28px;
 }
 
+.set-top1 ,.set-top2 {
+    margin-top: 52px;
+}
+.set-top1{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.set-top2{
+    margin-left: 72px;
+}
 .setForm{
-    font-family: shuhei;
-    margin: 10% 15%;
+    background-color: #fbf7f1;
+    width: 342px;
+    border-radius: 20px;
+    height: 585px;
+    margin-top: 70px;
+    margin-left: 50px;
+    font-size: 20px;
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.setGender{
-    align-items: start;
-    border-radius: 1.5rem  1.5rem 0 0;
-    color: #9c7979;
-    padding:8% 0 4% 0;
-    background-color: #cccaca;
-    font-size: 1rem;
-    >label{
-        margin-right: 5%;
-    }
-    >input{
-        outline: none;
-    }
+.set-btn{
+    background-image: url('src/assets/set/Group 1.png');
+    height: 80px;
+    width: 313px;
+    margin: 23px auto;
 }
 
-.bir{ 
-    color: #9c7979;
-    padding: 4%; 
-    background-color: #cccaca;
+.set-title{
+    text-align: start;
+    margin-left: 25px;
+    margin-bottom: 4px;
+    margin-top: 20.2px;
 }
 
+.set-input {
+    font-size: 20px;
+    outline: none;
+    padding: 0 2%;
+    width: 276px;
+    height: 45px;
+    border-radius: 10px;
+    border: solid 2.5px #cab8a5;
+    background-color: #fbf7f1;
+}
 .set-goback{
     color: #f4c884;
     width: 40px;
@@ -55,85 +68,14 @@
     margin: 2% 70% 0 2%;
 }
 
-.set-N{
-    font-family: shuhei;
-    color: #f4c884;
-    margin: 15% 20% 10% 20%;
-    font-size: 2.5rem;
-}
-
-.set-input{
-    font-family: shuhei;
-    width: 70%;
-    margin: 3% auto;
-    height: 4rem;
-    font-size: 3rem;
-    background-color:#cccaca ;
-    border: none;
-    text-align: center;
-    border-radius:1.5rem ;
-    outline: none;
-    padding: 0 5%;
-}
-
-.set-b{
-    font-family: shuhei;
-    font-size: 2rem;
-    line-height: 0;
-    align-self: center;
-    background-color: #f4c884;
-    color: #a27823;
-    width: 60%;
-    height: 4rem;
-    margin-top: 15%;
-    border-radius: 2rem;
-}
-
-.set-warn{
-    font-family: shuhei;
-    margin-top: 3%;
-    color: #cccaca;
-    margin-bottom: 10%;
-}
-
-.d div{
-    display: inline;
-}
-
-.bir-container{
-    align-items: center;
-    width: 20rem;
-}
-
-.set-text1 , .set-text2 {
-    padding-top: 2%;
-    background-color: #cccaca;
-    padding-left: 5%;
-    font-size: 1rem;
-    color: #9c7979;
-    display: flex;
-    flex-direction: column;
-    align-items: top;
-    >div{
-        text-align: start;
-        padding-left: 5%;
-    }
-}
-
-.set-text2{
-    border-radius:0 0 1.5rem 1.5rem;
-    padding-bottom: 5%;
-}
-
 .myTextarea {
-    border: 1px solid #9c7979;
     resize: none;
-    color: #9c7979;
     font-family: Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 20px;
     padding: 0.5rem;
-    border-radius: 1rem;
+    border-radius: 10px;
     margin: 1% 5%;
-    background-color: #cccaca;
+    border: solid 2.5px #cab8a5;
+    background-color: #fbf7f1;
     outline: none;
 }
