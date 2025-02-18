@@ -36,7 +36,7 @@ const SetMine = () => {
     }]
 
     const pass = () => {
-        setLocation('/showCase')
+        setLocation('/startBlessing')
     }
 
     const update = () => {

@@ -1,0 +1,118 @@
+.user-profile {
+    background-image: url('src/assets/set/bg.png');
+    display: flex;
+    background-position: bottom;
+    flex-direction: column;
+    height: 957px;
+    width: 440px;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    background-image: url('src/assets/startBlessing/Rectangle 7.png');
+    background-size: cover;
+    height: 108px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.back-btn, .edit-btn {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.back-btn {
+    background-image: url('src/assets/startBlessing/arrow_back.png');
+}
+
+.edit-btn {
+    background-image: url('src/assets/startBlessing/编辑.png');
+}
+
+.title {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.avatar {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.avatar img {
+    width: 195px;
+    height: 195px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.nickname {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.profile-info {
+    background-color: #fbf7f1;
+    width: 342px;
+    border-radius: 20px;
+    height: auto;
+    margin: 70px auto 0;
+    padding: 20px;
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
+    border: solid 3px #8B0000; /* 深红色边框 */
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.info p {
+    font-size: 18px; /* 增大字体 */
+    margin: 10px 0;
+    color: #8B4513; /* 棕色文字 */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-weight: bold; /* 加粗文字 */
+}
+
+.info strong {
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.my-profile-btn, .create-profile-btn {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 313px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    background-color: #f8f8f800;
+}
+
+.my-profile-btn {
+    background-image: url('src/assets/startBlessing/Group 1-1.png');
+}
+
+.create-profile-btn {
+    background-image: url('src/assets/startBlessing/Group 1.png');
+}

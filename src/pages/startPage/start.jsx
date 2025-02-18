@@ -8,7 +8,7 @@ const Start = () => {
     const { loadS , setLoadS } = useContext(UserContext)
 
     const goToLogin = () => {
-        setLocation("/showCase");
+        setLocation("/login");
     };
 
     const goToRegister = () => {

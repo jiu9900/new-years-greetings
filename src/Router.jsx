@@ -4,6 +4,7 @@ import Login from './pages/login/login';
 import Register from "./pages/register/register";
 import SetMine from "./pages/setMine/setMine";
 import Showcase from './pages/Showcase/Showcase';
+import StartBlessing from './pages/startBlessing/startBlessing';
 const MyRouter = () => {
     const router =[{
         path:"/", component:Start 
@@ -15,6 +16,8 @@ const MyRouter = () => {
         path:"/set",component:SetMine
     },{
         path:"/showCase",component:Showcase
+    },{
+        path:"/startBlessing",component:StartBlessing
     }]
 
     return (
