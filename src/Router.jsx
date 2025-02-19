@@ -8,7 +8,7 @@ import StartBlessing from './pages/startBlessing/startBlessing';
 
 const MyRouter = () => {
     const router = [
-        { path: "/", component: Start },
+        { path: "/", component: StartBlessing },
         { path: "/login", component: Login },
         { path: "/register", component: Register },
         { path: "/set", component: SetMine },

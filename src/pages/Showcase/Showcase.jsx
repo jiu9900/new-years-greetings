@@ -60,6 +60,20 @@ export default function Showcase() {
 
   //当前祝福
   const [current, setCurrent] = useState(1);
+
+  const notSelectedStyle = {  
+    width: '50%',  
+    color: '#f4c884',  
+    background: 'rgba(128, 16, 12, 0.7)',  
+  };  
+
+  const selectedStyle = {  
+    boxSizing: 'border-box',  
+    width: '30%',  
+    color: 'rgb(128, 16, 12)',  
+    borderBottom: '10px solid rgba(128,16,12,0.7)',  
+    margin: '10px 10% 0 10%',  
+  };
   
   //祝福内容
   let items ;
@@ -139,8 +153,8 @@ export default function Showcase() {
         <div className="top-section"></div>
         {/* 中间 */}
         <div className='middle-section'>
-          <div className='section1' onClick={ () => { changeSection(1) }}></div>
-          <div className='section2' onClick={ () => { changeSection(2) }}></div>
+           <div className='section1' style={section===1?selectedStyle:notSelectedStyle} onClick={ () => { changeSection(1) }}>我的创作</div>
+          <div className='section2' style={section===2?selectedStyle:notSelectedStyle} onClick={ () => { changeSection(2) }}>收到的祝福</div>
         </div>
         {/* 下面 */}
         <div className="bottom-section">
