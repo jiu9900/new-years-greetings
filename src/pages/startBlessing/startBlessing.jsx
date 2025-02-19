@@ -3,6 +3,7 @@ import { useLocation } from 'wouter';
 import './startBlessing.css';
 import { UserContext } from "../../utils/userContext";
 
+
 const UserProfile = () => {
   const { userData, setUserData } = useContext(UserContext);
   const [location, setLocation] = useLocation(); 

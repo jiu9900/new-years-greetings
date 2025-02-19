@@ -25,6 +25,9 @@
     cursor: pointer;
 }
 
+.login-goback:hover {
+    transform: scale(1.1);
+}
 .Rform {
     margin-top: 150px;
     margin-left: 50%;
@@ -65,18 +68,15 @@
 
 .login {
     cursor: pointer;
-    font-family: shuhei;
     width: 310px;
-    margin: 46px 0 0 0;
-    height: 75px;
+    height: 70px;
     border-radius: 60px;
-    background-color: #8a0000;
-    color: #d7a9a8;
-    font-size: 30px;
-    line-height: 0px;
+    margin-top: 23px;
+    background-image: url("src/assets/login/Group 1.png");
+    background-size: cover;
+    background-position: center; 
     border: none;
-    margin-bottom: 3%;
-}
+  }
 
 .loginTurn{
     width: 300px;

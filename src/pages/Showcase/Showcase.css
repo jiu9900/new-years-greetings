@@ -22,6 +22,11 @@
     cursor: pointer;
   }
   
+  
+ .back-button:hover {
+   transform: scale(1.1);
+ }
+
   .createBless {
     position: absolute;
     top: 10px;
@@ -42,14 +47,13 @@
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    background-image: url("src/assets/showCase/MyShowcase/Group\ 6.png");
+    background-image: url("src/assets/showCase/MyShowcase/Group 6.png");
   }
   
   .middle-section {
     height: 59px;
     display: flex;
     flex-direction: row;
-    background-image: url("src/assets/showCase/MyShowcase/Group\ 5.png");
   }
  .section1 {
    cursor: pointer;
@@ -189,4 +193,13 @@
     align-items: center;
     margin: 0;
     border-radius: 20px;
+}
+
+.createBless {
+  margin-right: 10px;
+  margin-top: 31px;
+}
+
+.createBless:hover {
+  transform: scale(1.2);
 }

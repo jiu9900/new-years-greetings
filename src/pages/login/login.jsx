@@ -116,7 +116,7 @@ const Login = () => {
             </div>
           ))}
             <div onClick={forget} className='forget' >忘记密码 ？</div>
-            <button onClick={login} className='login'>登 录</button>
+            <button onClick={login} className='login'></button>
             <div className='loginTurn'><p className='text'>还没有账号 ？ </p><p onClick={register} className='login-register'>立即注册</p></div>
             </form>
         </div>
