@@ -38,6 +38,19 @@ const Login = () => {
     }
   }; 
   
+
+  // 在登录页面处理完成后的代码  
+  const handleLoginSuccess = () => {  
+      const params = new URLSearchParams(window.location.search);  
+      const returnUrl = params.get('returnUrl');  
+      if (returnUrl) {  
+          window.location.href = decodeURIComponent(returnUrl);  
+      } else {  
+          // 默认跳转到主页或其他页面  
+          setLocation('/startBlessing');  
+      }  
+  } 
+
   const upload = async () => {
     try {
       toast.loading('我知道你很急但你先别急∠( ᐛ 」∠)_',{
@@ -51,8 +64,8 @@ const Login = () => {
       setPassword('');
       setToken(response.data.token);
       setUserData(response.data.user);
+      handleLoginSuccess()
       console.log(response)
-      setLocation('/set')
       console.log('Login successful');
     } catch (err) {
       setError(

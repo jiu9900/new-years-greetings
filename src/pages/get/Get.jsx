@@ -27,6 +27,10 @@ const GoLogin = () =>{
 
     const [, setLocation] = useLocation();
 
+    useEffect(() => {  
+        const currentUrl = window.location.href; // 获取当前页面URL  
+    }, []);  
+
     useEffect
     return (<>
     请先登录
