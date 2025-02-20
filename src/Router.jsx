@@ -9,7 +9,7 @@ import Get from "./pages/get/Get";
 import Create from "./pages/create/create"
 const MyRouter = () => {
     const router =[{
-        path:"/", component:Start 
+        path:"/", component:StartBlessing 
     },{
         path:"/login", component:Login
     },{
