@@ -1,4 +1,4 @@
-import { useState ,useContext }from 'react';  
+import { useState ,useContext ,useEffect ,useCallback}from 'react';  
 import axios from 'axios';
 import { useLocation } from 'wouter';  
 import './login.css'
@@ -7,7 +7,7 @@ import { UserContext } from '../../utils/userContext';
 import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {  
 
-  const{ setUserData , setLoadS } = useContext(UserContext)
+  const{ userData ,setUserData , setLoadS } = useContext(UserContext)
 
   const [, setLocation] = useLocation();
   const [user, setUser] = useState('');  
@@ -70,6 +70,26 @@ const Login = () => {
       }
     }
   }
+
+const getSetData = useCallback(async () => {  
+  try {  
+    if (userData && userData.id) {  // 添加空值检查  
+      const res = await axios.get('http://192.168.192.26:8080//profile', {  
+        userID: userData.id  
+      });  
+      setUserData({  
+        ...userData,  
+        setData: res.data  
+      });  
+    }  
+  } catch (err) {  
+    console.error(err);  
+  }  
+}, [userData?.id]); // 将依赖数组修改为`userData?.id`
+
+useEffect(() => {  
+  getSetData(); // 在 useEffect 中调用  
+}, [getSetData]); // 将 getSetData 添加到依赖数组
 
   const check = () => {
     if(user===''){

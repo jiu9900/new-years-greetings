@@ -60,11 +60,11 @@ const UserProfile = () => {
 
       <div className="profile-info">
         <div className="info">
-          <p><strong>年龄:</strong> {userData?.age || '未知'}</p>
-          <p><strong>生日:</strong> {userData?.birthday || 'mm/dd'}</p>
-          <p><strong>性别:</strong> {userData?.gender || '未知'}</p>
-          <p><strong>兴趣:</strong> {userData?.interests || '未知'}</p>
-          <p><strong>状态:</strong> {userData?.status || '未知'}</p>
+          <p><strong>年龄:</strong> {userData?.setData.age || '未知'}</p>
+          <p><strong>生日:</strong> {userData?.setData.birthday || 'mm/dd'}</p>
+          <p><strong>性别:</strong> {userData?.setData.gender || '未知'}</p>
+          <p><strong>兴趣:</strong> {userData?.setData.interests || '未知'}</p>
+          <p><strong>状态:</strong> {userData?.setData.status || '未知'}</p>
         </div>
       </div>
 
