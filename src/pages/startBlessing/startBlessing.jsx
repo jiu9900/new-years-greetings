@@ -8,7 +8,7 @@ const UserProfile = () => {
   const [, setLocation] = useLocation();
 
   const goBack = () => {
-    setLocation('/start');
+    setLocation('/');
   };
 
   const goToEdit = () => {
@@ -39,8 +39,8 @@ const UserProfile = () => {
       </div>
 
       <div className="buttons">
-        <button className="my-profile-btn"></button>
-        <button className="create-profile-btn"></button>
+        <button className="my-profile-btn" onClick={()=>{setLocation('/showCase')}}></button>
+        <button className="create-profile-btn" onClick={() => {setLocation('/create')}}></button>
       </div>
     </div>
   );
