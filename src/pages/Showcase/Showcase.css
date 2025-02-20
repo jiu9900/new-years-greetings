@@ -8,11 +8,12 @@
     width: 440px;
     background-position:bottom ;
     position: relative;
-    background-image: url("src/assets/showCase/receive/Background.png");
+    background-image: url("/src/assets/showCase/Receive/Background.png");
+    background-size: 100% 90%;
   }
   
   .back-button {
-    background-image: url("src/assets/showCase/receive/arrow_back.png");
+    background-image: url("/src/assets/showCase/Receive/arrow_back.png");
     position: absolute;
     top: 54px;
     left: 23px;
@@ -42,12 +43,12 @@
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    background-image: url("src/assets/showCase/MyShowcase/Group\ 6.png");
   }
   
   .middle-section {
     height: 59px;
     display: flex;
+    margin-top: -1px;
     flex-direction: row;
     /* background-image: url("src/assets/showCase/MyShowcase/Group\ 5.png"); */
   }
@@ -83,20 +84,25 @@
   
   .scroll-button {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 70%;
+    width: 38px;
+    height: 48px;
     padding: 10px;
-    background-color: #ccc;
+    border-radius: 15px;
     border: none;
     cursor: pointer;
+    background-image: url("/src/assets/showCase/MyShowcase/Group\ 25.png");
   }
-  
+  .scroll-button:active {
+    background-image: url("/src/assets/showCase/MyShowcase/Group\ 23.png");
+  }
   .scroll-button.left {
-    left: 10px;
+    left: 30px;
   }
   
   .scroll-button.right {
-    right: 10px;
+    right: 30px;
+    transform: scaleX(-1);
   }
   
   .buttons {
@@ -113,35 +119,17 @@
     cursor: pointer;
   }
   
-  .blessUrl {
-    position: absolute;
+  .pop-up {
     margin: 0;
-    width: 90%;
-    height: 30%;
-    top: 35%;
-    left: 5%;
-    background-color: white;
+    top: 340px;
+    left: 27px;
     border: none;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;pointer-events: auto;
+    overflow: hidden;
+    pointer-events: auto;
   }
-  
-  .clear{
-    position: absolute;
-    right: 0;
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    border: none;
-    background-color: aliceblue;
-  }
-  
-  /* .clear:hover {
-    background-color: red;
-    border-radius: 10px;
-  } */
   
   .overlay {
     position: fixed;
@@ -157,6 +145,57 @@
 
   }
 
+  .jump {
+    pointer-events: auto;
+  }
+
+  .clear{
+    position: relative;
+    bottom: 343px;
+    left: 323px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+  }
+
+  .chart {
+    position: relative;
+    left: 49px;
+    bottom: 301px;
+    width: 290px;
+    height: 90px;
+  }
+
+  .link {
+    position: relative;
+    bottom: 275px;
+    width: 290px;
+    height: 90px;
+    left: 49px;
+  }
+
+  .blessUrl {
+    position: absolute;
+    top: 430px;
+    width: 380px;
+    height: 140px;
+    left: 30px;
+    background-color:aliceblue;
+    border-radius: 30px;
+  }
+
+  .cleared {
+    position: relative;
+    left: 175px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color:aliceblue;
+    overflow: hidden;
+    pointer-events: auto;
+  }
+
   .success {
     flex: 1;
     margin: auto;
@@ -164,8 +203,11 @@
   }
   
   .Myurl {
-    flex: 1;
-    margin: auto;
+    position: relative;
+    width: 270px;
+    top: 20px;
+    border: 1px solid black;
+    pointer-events: auto;
   }
 
   /* Inner */

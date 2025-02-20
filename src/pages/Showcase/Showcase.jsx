@@ -1,54 +1,11 @@
-// import { useState } from 'react'
-// import Blessing from './Blessing.jsx'
-// import './App.css'
-// import Mainbless from './Mainbless.jsx'
-
-// export default function App() {
-//   const [tick, setTick]= useState(0);
-//   const [choice, setChoice]= useState(false);
-//   console.log(tick);
-  
-//   function postBless() {
-//     if ( tick!==0 ) {
-      
-//       alert("送出祝福成功！")
-//       setChoice(false);
-//     } else {
-//       alert("你还没有选择祝福哦！");
-//     }
-//   }
-  
-//   function back() {
-//     //...
-//   }
-//   return (
-//     <div className="container">
-      
-//       <div className="back-button" onClick={()=>{back()}}>{"<"}</div>
-      
-//       <div className="middle-box">
-//         <div className="top-section">我的橱窗</div>
-//         <div className="bottom-section">
-//           here
-//           <Mainbless/>
-//         </div>
-//       </div>
-
-
-//       <div className="buttons">
-//         <button className="button" onClick={()=>{choice?postBless():setChoice(true)}}>去送出</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-
+import { useLocation } from 'wouter';
 import { useState } from 'react';
  import axios from 'axios'
 import './Showcase.css';
 
-
 export default function Showcase() {
+
+  const [, setLocation] = useLocation();
 
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -69,35 +26,31 @@ export default function Showcase() {
   //弹窗控制
   const [isPosting, setIsPosting] = useState(false);
 
+  const [posted, setPosted]=useState(false);
+
   //创作 or 送的
   const [section, setSection]= useState(1);
 
   //当前祝福
   const [current, setCurrent] = useState(1);
   
+  //
+  const [imputVal, setInputVal] = useState('');
+
   //祝福内容
   let items ;
 
-  console.log(current);
+  // console.log(current);
   
   //送出我的祝福
 
-
-  //没写完
   function postBless() {
-    const res = async () => {
-      try {
-        const result = await axios.post('', )
-      } catch(err) {
-        console.log(err)
-      }
-    }
-    setIsPosting(true);
+    setPosted(true);
   }
 
   if (section===1) {
     items= [
-      1,
+      '你好我是sb',
       2,
       3,
       4,
@@ -109,6 +62,11 @@ export default function Showcase() {
     ];
   }
 
+  const postUrl=<input className='Myurl' 
+                       onChange={(e) => setInputVal(e.target.value)} 
+                       value={`http://localhost:5174/get?current=${items[current-1]}`}/>;
+
+
   //切换
   function changeSection(i) {
     setSection(i);
@@ -117,7 +75,7 @@ export default function Showcase() {
 
   //返回按钮
   function back() {
-    window.history.back();
+    setLocation('/startBlessing');
   }
 
   //滚动事件
@@ -148,11 +106,10 @@ export default function Showcase() {
   return (
     <div className="container">
       <div className="back-button" onClick={() => back()}></div>
-      <div className='createBless'>+</div>
 
       <div className="middle-box">
         {/* 头部 */}
-        <div className="top-section"></div>
+        <img className='top-section' src="/src/assets/showCase/MyShowcase/Group 6.png" alt="" />
         {/* 中间 */}
         <div className='middle-section'>
           <div className='section1' style={section===1?selectedStyle:notSelectedStyle} onClick={ () => { changeSection(1) }}>我的创作</div>
@@ -178,16 +135,11 @@ export default function Showcase() {
               ))}
             </div> */}
             {/* 左按钮 */}
-
-
-
             <button className="scroll-button left" onClick={() => scroll(-1)}>
-              &lt;
+              
             </button>
             {/* 右按钮 */}
-            <button className="scroll-button right" onClick={() => scroll(1)}>
-              &gt;
-            </button>
+            <button className="scroll-button right" onClick={() => scroll(1)}></button>
           </div>
         </div>
       </div>
@@ -195,17 +147,26 @@ export default function Showcase() {
       <div className="buttons">
       {/* 送祝福按钮 */}
         { section===1 &&
-        <img className='share' onClick={() => postBless()} src="/resources/receive/Group 1.png" alt="" />
+        <img className='share' onClick={() => setIsPosting(true)} src="/src/assets/showCase/Receive/Group 1.png" alt="" />
         }
       </div>
       {/* 弹窗 */}
       {isPosting && 
-        <div className='overlay'>
-          <div className='blessUrl'>
-          <button className='clear' onClick={ () => {setIsPosting(false)}}>X</button>
-          <div className='success'>祝福已经打包好，快分享给朋友看看吧！</div>
-          <div className='Myurl'>url{current}</div>
-          </div>
+      <div className='overlay'>
+        <div className='jump'>
+          <img className='pop-up' src="/src/assets/showCase/Share/Group 19.png" alt="" />
+          <div className='clear' onScroll={() => {setIsPosting(false)}} onClick={ () => {setIsPosting(false)}}></div>
+          <div className='chart' onClick={() => {alert("还是生成链接吧！")}}></div>
+          <div className='link' onClick={() => {postBless()}} type="submit"></div>
+        </div>
+          
+      </div>
+      }
+      {posted && 
+      <div className='blessUrl'>
+        <button className='cleared' onClick={ () => {setPosted(false)}}>X</button>
+        <div className='success'>祝福已经打包好，快分享给朋友看看吧！</div>
+        {postUrl}
         </div>
       }
     </div>
