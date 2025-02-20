@@ -21,8 +21,6 @@ export default function Get () {
     }else{
         return <GoLogin />  
     }
-
-        
 }
 
 const GoLogin = () =>{
