@@ -21,6 +21,26 @@
     
 }
 
+.create-text{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/src/assets/create/Carousel Item.png');
+    height: 580px;
+    width: 340px;
+    padding: 120px 50px;
+    border: none;
+    text-align: start;
+    font-family: 宋体;
+    font-size: 28px;
+    border-radius: 30px;
+}
+
+.create-text:focus {
+    border: none;
+    outline: none;
+}
+
 .edit {
     position: relative;
     width: 100px;

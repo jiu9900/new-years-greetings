@@ -9,8 +9,21 @@ export default function create () {
 
   const [editing, setEditing] = useState(false);
 
+  const [inputVal, setInputVal] = useState("");
+  
+  //返回
   function back () {
-    setLocation('/startBlessing');
+    if (editing) {
+      setEditing(false);
+    } else {
+      setLocation('/startBlessing');
+    }
+  }
+
+  //输入监听
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setInputVal(value);
   }
 
   return(
@@ -24,7 +37,7 @@ export default function create () {
                 }} 
            src="/src/assets/create/创作中心.png"/>
       <div className='create-main'>
-        <Bless></Bless>
+        <input className='create-text' type="text" value={inputVal} onChange={handleChange} disabled={!editing}/>
       </div>
 
       {!editing && 
@@ -36,7 +49,7 @@ export default function create () {
         </div>
         <div style={{marginTop: '-40px'}}>
             <img src="/src/assets/create/Rectangle 1 (2).png" alt="" />
-            <div className='store'>放入橱窗</div>
+            <div className='store' onClick={() => {Bless({inputVal})}}>放入橱窗</div>
         </div>
       </div>}
       {editing &&
