@@ -4,6 +4,7 @@ import axios from 'axios'
 import { UserContext } from '../../utils/userContext';
 import { getToken } from '../../utils/auth';
 import './Showcase.css';
+import Bless from '../../components/blessing/bless';
 
 export default function Showcase() {
 
@@ -13,7 +14,10 @@ export default function Showcase() {
 
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const [ sent ,setSent ] = useState([])
+  const [ sent ,setSent ] = useState([{
+    id:1,
+    content:"快来创作吧"
+  }])
 
   const [ receive ,setReceive ] = useState([])
 
@@ -98,22 +102,14 @@ export default function Showcase() {
   }
 
   if (section===1) {
-    items= [
-      '你好我是sb',
-      2,
-      3,
-      4,
-      5
-    ];
+    items=sent;
   } else {
-    items= [
-      6,7,8,9,10,11
-    ];
+    items=receive;
   }
 
   const postUrl=<input className='Myurl' 
                        onChange={(e) => setInputVal(e.target.value)} 
-                       value={`http://localhost:5174/get?blessId=${items[current-1]}`}/>;
+                       value={`http://localhost:5174/get?blessId=${(items[current-1])?.id}`}/>;
 
 
   //切换
@@ -229,7 +225,9 @@ function Inner({items, setNum}) {
               {/* 祝福 */}
               {items.map((item, index) => (
                 <div className="scrollable-item" key={index}>
-                  {item}
+                  <Bless key={index} 
+                  content={item?.content}
+                  ></Bless>
                 </div>
               ))}
             </div>

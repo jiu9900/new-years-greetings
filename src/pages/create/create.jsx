@@ -1,6 +1,7 @@
 import './create.css'
 import { useLocation } from 'wouter';
 import { useState } from 'react';
+import Bless from '../../components/blessing/bless';
 
 export default function create () {
 
@@ -23,13 +24,12 @@ export default function create () {
                 }} 
            src="/src/assets/create/创作中心.png"/>
       <div className='create-main'>
-        <img src="/src/assets/create/Carousel Item.png" alt="" />
-        <div></div>
+        <Bless></Bless>
       </div>
 
       {!editing && 
       <div>
-        <div style={{marginTop: '10px',display: 'flex',flexDirection: 'column'}}>
+        <div style={{marginTop: '30px',display: 'flex',flexDirection: 'column'}}>
             <img style={{cursor: 'pointer'}} onClick={() => {setEditing(true)}} src="/src/assets/create/Rectangle 1 (2).png" alt="" />
             <img className='edit' onClick={() => {setEditing(true)}} src="/src/assets/create/编辑.png" alt="" />
         </div>

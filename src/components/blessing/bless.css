@@ -1,0 +1,12 @@
+.create-main{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+   background-image: url('/src/assets/create/Carousel Item.png');
+    height: 580px;
+    width: 343px;
+    padding: 120px 50px;
+    text-align: start;
+    font-family: 宋体;
+    font-size: 28px;
+}
