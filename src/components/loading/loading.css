@@ -5,7 +5,6 @@
     transition: all 1s ease-in;
     display: flex;
     flex-direction: column;
-    background-color: rgb(244, 160, 160);
     height: 956px;
     background-image:url('src/assets/start/背景1.png') ;
     width: 440px;
@@ -18,7 +17,7 @@
     width: 440px;
     position: relative;
     height: 956px;
-    transition: all .2s ease-out;
+    transition: all .3s ease-out;
 }
 
 .Ovo {

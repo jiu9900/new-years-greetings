@@ -46,9 +46,10 @@
     justify-content: center;
 }
 
+
 .avatar img {
-    width: 195px;
-    height: 195px;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
     margin: 0 auto;
     display: block;
@@ -56,9 +57,10 @@
 
 .nickname {
     text-align: center;
-    font-size: 22px;
+    font-size: 30px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-bottom: 1px;
+    color: #760e0e;
 }
 
 .profile-info {
@@ -69,21 +71,22 @@
     margin: 70px auto 0;
     padding: 20px;
     box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
-    border: solid 3px #8B0000; /* 深红色边框 */
-}
-
-.info {
+    border: solid 3px #8B0000; 
     margin-top: 20px;
 }
 
+.info {
+    margin-top: 5px;
+}
+
 .info p {
-    font-size: 18px; /* 增大字体 */
-    margin: 10px 0;
-    color: #8B4513; /* 棕色文字 */
+    font-size: 18px; 
+    margin: 6px 0;
+    color: #8B4513;
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
-    font-weight: bold; /* 加粗文字 */
+    font-weight: bold;
 }
 
 .info strong {
@@ -116,3 +119,4 @@
 .create-profile-btn {
     background-image: url('src/assets/startBlessing/Group 1.png');
 }
+

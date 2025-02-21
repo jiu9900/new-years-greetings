@@ -26,6 +26,8 @@ const MyRouter = () => {
         path:"/setMine",component:SetMine
     },{
         path:"/create",component:Create
+    },{
+        path:"/start",component:Start
     }]
 
     return (

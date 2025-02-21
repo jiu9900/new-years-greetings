@@ -78,7 +78,7 @@ const Register = () => {
   };
 
   const handleBack = () => {
-    setLocation('/')
+    setLocation('/start')
   };
 
   const login = () => {
