@@ -30,8 +30,8 @@
     background-color: #fbf7f1;
     width: 342px;
     border-radius: 20px;
-    height: 585px;
-    margin-top: 70px;
+    height: 630px;
+    margin-top: 60px;
     margin-left: 50px;
     font-size: 20px;
     box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
@@ -78,4 +78,7 @@
     border: solid 2.5px #cab8a5;
     background-color: #fbf7f1;
     outline: none;
+}
+.error-message {
+    color: rgba(188, 2, 2, 0.75);
 }

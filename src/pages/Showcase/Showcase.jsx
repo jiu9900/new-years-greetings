@@ -12,6 +12,10 @@ export default function Showcase() {
 
   const [, setLocation] = useLocation();
 
+  const gotocreate = () => {
+    setLocation('/create');
+  };
+
   const [isScrolling, setIsScrolling] = useState(false);
 
   const [ sent ,setSent ] = useState([{
@@ -151,6 +155,7 @@ export default function Showcase() {
   return (
     <div className="container">
       <div className="back-button" onClick={() => back()}></div>
+      <div className="create-button" onClick={gotocreate}>+</div>
 
       <div className="middle-box">
         {/* 头部 */}

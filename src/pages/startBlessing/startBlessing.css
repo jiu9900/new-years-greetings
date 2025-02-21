@@ -46,7 +46,6 @@
     justify-content: center;
 }
 
-
 .avatar img {
     width: 210px;
     height: 210px;
@@ -72,7 +71,7 @@
     padding: 20px;
     box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.2);
     border: solid 3px #8B0000; 
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .info {

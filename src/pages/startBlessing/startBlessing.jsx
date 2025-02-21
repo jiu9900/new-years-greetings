@@ -10,11 +10,11 @@ const UserProfile = () => {
   const [avatarPreview, setAvatarPreview] = useState(setData?.avatar || '/src/assets/startBlessing/Ellipse 1.png');
   const [isLoading, setIsLoading] = useState(true); // 加载状态
 
-  // 模拟加载过程
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false); // 2秒后加载完成
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer); // 清除定时器
   }, []);
 
@@ -56,11 +56,10 @@ const UserProfile = () => {
 
   return (
     <>
-      {/* 添加 Loading 组件 */}
       <Loading
-        loadS={!isLoading} // 加载完成后隐藏 Loading
+        loadS={!isLoading} 
         setLoadS={setIsLoading}
-        loadingPage={<div>加载中...</div>} // 自定义加载内容
+        loadingPage={<div><img src="/src/assets/startBlessing/老爷您吉祥.png"/></div>} 
         content={
           <div className="user-profile">
             <div className="header">
@@ -76,7 +75,6 @@ const UserProfile = () => {
 
             <div className="profile-info">
               <div className="info">
-                <p><strong>年龄:</strong> {setData?.setData.age || '未知'}</p>
                 <p><strong>生日:</strong> {setData?.setData.birthday || 'mm/dd'}</p>
                 <p><strong>性别:</strong> {setData?.setData.gender || '未知'}</p>
                 <p><strong>兴趣:</strong> {setData?.setData.interests || '未知'}</p>

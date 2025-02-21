@@ -14,14 +14,3 @@ export const UserProvider = ({ children }) => {
   );  
 };  
 
-// export const BirthdayContext = createContext()
-
-// export const BirthdayProvider = ({ children }) => {
-//   const [birth ,setBirth] = useState(null)
-
-//   return (
-//     <BirthdayContext.Provider value={{ birth ,setBirth }}>
-//       {children}
-//     </BirthdayContext.Provider>
-//   )
-// }
