@@ -29,9 +29,10 @@ export default function create () {
 
       {!editing && 
       <div>
-        <div style={{marginTop: '30px',display: 'flex',flexDirection: 'column'}}>
+        <div style={{display: 'flex',
+                     flexDirection: 'column'}}>
             <img style={{cursor: 'pointer'}} onClick={() => {setEditing(true)}} src="/src/assets/create/Rectangle 1 (2).png" alt="" />
-            <img className='edit' onClick={() => {setEditing(true)}} src="/src/assets/create/编辑.png" alt="" />
+            <img className='edit' style={{cursor: 'pointer'}} onClick={() => {setEditing(true)}} src="/src/assets/create/编辑.png" alt="" />
         </div>
         <div style={{marginTop: '-40px'}}>
             <img src="/src/assets/create/Rectangle 1 (2).png" alt="" />

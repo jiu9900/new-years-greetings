@@ -1,12 +1,19 @@
-.create-main{
+.text{
     align-self: center;
     display: flex;
     flex-direction: column;
-   background-image: url('/src/assets/create/Carousel Item.png');
+    background-image: url('/src/assets/create/Carousel Item.png');
     height: 580px;
     width: 343px;
     padding: 120px 50px;
+    border: none;
     text-align: start;
     font-family: 宋体;
     font-size: 28px;
+    border-radius: 25px;
+}
+
+.text:focus {
+    border: none;
+    outline: none;
 }
