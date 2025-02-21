@@ -1,0 +1,30 @@
+.get-bg{
+    background: rgba(0,0,0,0.2);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.get-container{
+    padding: 20px;
+    margin: 20% auto;
+    width: 200px;
+    height: 150px;
+    border: 1px solid rgb(105, 75, 31);
+    border-radius: 20px;
+    color: rgb(105, 75, 31);
+    background-color: blanchedalmond;
+}
+
+.getTitle{
+    font-size: 28px;
+}
+
+.get-btn{
+    background-color:rgb(105, 75, 31) ;
+    margin-top: 20px;
+    color: blanchedalmond;
+    border-radius: 20px ;
+    cursor: pointer;
+    font-size: 28px;
+}

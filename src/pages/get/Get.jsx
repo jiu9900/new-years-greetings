@@ -31,11 +31,12 @@ const GoLogin = () =>{
         const currentUrl = window.location.href; // 获取当前页面URL  
     }, []);  
 
-    useEffect
     return (<>
-    请先登录
-    <div>
-        <button onClick={()=>setLocation('/login')}>去登录</button>
+    <div className='get-bg'>
+        <div className='get-container'>
+            <div className='getTitle'>请先登录</div>
+            <div className='get-btn' onClick={()=>setLocation('/login')}>去登录</div>
+        </div>
     </div>
     </>)
 }
@@ -62,9 +63,11 @@ const GoReceive = ({blessId}) => {
     }
 
     return (<>
-    你的朋友给你送来祝福喽！
-    <div>
-        <button onClick={receive()}> 接收祝福并查看</button>
+    <div className='get-gb'>
+        <div className='get-container'>
+            <div className='getTitle'>你的朋友给你送来祝福喽！</div>
+            <div className='get-btn' onClick={receive()}> 接收祝福并查看</div>
+        </div>
     </div>
     </>)
 }

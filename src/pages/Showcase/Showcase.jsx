@@ -1,13 +1,21 @@
 import { useLocation } from 'wouter';
-import { useState } from 'react';
- import axios from 'axios'
+import { useEffect, useState ,useContext} from 'react';
+import axios from 'axios'
+import { UserContext } from '../../utils/userContext';
+import { getToken } from '../../utils/auth';
 import './Showcase.css';
 
 export default function Showcase() {
 
+  const { userData ,setUserData} = useContext(UserContext)
+
   const [, setLocation] = useLocation();
 
   const [isScrolling, setIsScrolling] = useState(false);
+
+  const [ sent ,setSent ] = useState([])
+
+  const [ receive ,setReceive ] = useState([])
 
   const notSelectedStyle = {  
     width: '50%',  
@@ -40,6 +48,47 @@ export default function Showcase() {
   //祝福内容
   let items ;
 
+  const token = getToken()
+
+  useEffect(()=>{
+    try{
+      const res = axios.get('/blessings/sent',{
+        headers :{
+          'Authorization': `Bearer ${token}`
+        }
+      })
+
+      setUserData({
+        ...userData,
+        sent:res.data.sent_blessings
+      })
+
+      setSent(res.data.sent_blessings)
+
+    }catch(err){
+      console.log(err)
+    }
+
+    try{
+      const res = axios.get('/blessings/received',{
+        headers :{
+          'Authorization': `Bearer ${token}`
+        }
+      })
+
+      setUserData({
+        ...userData,
+        receive:res.data.received_blessings
+      })
+
+      setReceive(res.data.received_blessings)
+
+    }catch(err){
+      console.log(err)
+    }
+
+  },[token])
+
   // console.log(current);
   
   //送出我的祝福
@@ -64,7 +113,7 @@ export default function Showcase() {
 
   const postUrl=<input className='Myurl' 
                        onChange={(e) => setInputVal(e.target.value)} 
-                       value={`http://localhost:5174/get?current=${items[current-1]}`}/>;
+                       value={`http://localhost:5174/get?blessId=${items[current-1]}`}/>;
 
 
   //切换
