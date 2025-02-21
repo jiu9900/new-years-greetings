@@ -95,7 +95,7 @@
   
   .scroll-button {
     position: absolute;
-    top: 70%;
+    top: 50%;
     width: 38px;
     height: 48px;
     padding: 10px;
@@ -104,16 +104,21 @@
     cursor: pointer;
     background-image: url("/src/assets/showCase/MyShowcase/Group\ 25.png");
   }
-  .scroll-button:active {
-    background-image: url("/src/assets/showCase/MyShowcase/Group\ 23.png");
-  }
   .scroll-button.left {
     left: 30px;
+  }
+  .scroll-button.left:active {
+    background-image: url("/src/assets/showCase/MyShowcase/Group\ 23.png");
+    transform: scaleX(-1);
   }
   
   .scroll-button.right {
     right: 30px;
     transform: scaleX(-1);
+  }
+  .scroll-button.right:active {
+    background-image: url("/src/assets/showCase/MyShowcase/Group\ 23.png");
+    transform: scaleX(1);
   }
   
   .buttons {
