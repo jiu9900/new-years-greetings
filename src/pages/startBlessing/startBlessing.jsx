@@ -13,7 +13,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false); // 2秒后加载完成
+      setIsLoading(false); // 1秒后加载完成
     }, 1000);
     return () => clearTimeout(timer); // 清除定时器
   }, []);
@@ -59,7 +59,7 @@ const UserProfile = () => {
       <Loading
         loadS={!isLoading} 
         setLoadS={setIsLoading}
-        loadingPage={<div><img src="/src/assets/startBlessing/老爷您吉祥.png"/></div>} 
+        loadingPage={<div></div>} 
         content={
           <div className="user-profile">
             <div className="header">
